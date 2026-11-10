@@ -1,0 +1,10 @@
+# 忽略 ComfyUI 运行产物
+__pycache__/
+*.pyc
+temp/
+output/
+user/
+models/
+*.log
+.DS_Store
+Thumbs.db
