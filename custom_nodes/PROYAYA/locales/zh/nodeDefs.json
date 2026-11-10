@@ -1,0 +1,382 @@
+{
+  "PROYYMiniMaxH3ReferenceToVideo": {
+    "display_name": "۞▷Reference to Window◁۞",
+    "inputs": {
+      "clip": {
+        "name": "文本编码器"
+      },
+      "vae": {
+        "name": "VAE"
+      },
+      "auto_segment": {
+        "name": "自动分窗"
+      },
+      "auto_prompt": {
+        "name": "自动提示词"
+      },
+      "window_frames": {
+        "name": "窗口帧数"
+      },
+      "manual_lengths": {
+        "name": "手动分窗长度"
+      },
+      "overlap": {
+        "name": "窗口重叠帧"
+      },
+      "keep_final": {
+        "name": "尾部保留帧"
+      },
+      "width": {
+        "name": "宽"
+      },
+      "height": {
+        "name": "高"
+      },
+      "length": {
+        "name": "总帧数"
+      },
+      "text_weight": {
+        "name": "文本权重"
+      },
+      "image_weight": {
+        "name": "参考图权重"
+      },
+      "video_weight": {
+        "name": "参考视频权重"
+      },
+      "video_encode": {
+        "name": "视频编码"
+      },
+      "unload": {
+        "name": "用完卸载"
+      },
+      "preview_only": {
+        "name": "仅预览"
+      },
+      "audio_vae": {
+        "name": "音频 VAE"
+      },
+      "ref_images": {
+        "name": "参考图"
+      },
+      "main_ref_videos": {
+        "name": "主参考视频"
+      },
+      "ref_videos": {
+        "name": "参考视频"
+      },
+      "main_ref_video_audios": {
+        "name": "主参考音频"
+      },
+      "ref_audios": {
+        "name": "参考音频"
+      },
+      "prompts": {
+        "name": "分窗提示词"
+      },
+      "second_pass_windows": {
+        "name": "二采窗口"
+      },
+      "source_latent": {
+        "name": "源 latent"
+      },
+      "ref_cache": {
+        "name": "参考编码缓存"
+      },
+      "ref_cache_mb": {
+        "name": "缓存上限 MB"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "窗口"
+      },
+      "1": {
+        "name": "总帧数"
+      },
+      "2": {
+        "name": "分窗报告"
+      }
+    }
+  },
+  "PROYYMaskedSampler": {
+    "display_name": "۞▷Window Sampler◁۞",
+    "inputs": {
+      "noise": {
+        "name": "噪声"
+      },
+      "model": {
+        "name": "模型"
+      },
+      "windows": {
+        "name": "窗口"
+      },
+      "sampler": {
+        "name": "采样器"
+      },
+      "sigmas": {
+        "name": "Sigma 序列"
+      },
+      "high_cfg": {
+        "name": "高噪 CFG"
+      },
+      "cfg_split": {
+        "name": "CFG 分界"
+      },
+      "low_cfg": {
+        "name": "低噪 CFG"
+      },
+      "mask": {
+        "name": "遮罩"
+      },
+      "fusion_preserve": {
+        "name": "融合保留"
+      },
+      "rolling_enabled": {
+        "name": "滚动"
+      },
+      "rolling_strength": {
+        "name": "滚动强度"
+      },
+      "rolling_mode": {
+        "name": "滚动模式"
+      },
+      "rolling_front_high": {
+        "name": "滚动上限 σ"
+      },
+      "rolling_front_low": {
+        "name": "滚动下限 σ"
+      },
+      "unload": {
+        "name": "用完卸载"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "联合 latent"
+      },
+      "1": {
+        "name": "运行报告"
+      }
+    }
+  },
+  "PROYYImageScale": {
+    "display_name": "۞▷Resize Video◁۞",
+    "inputs": {
+      "file": {
+        "name": "视频文件"
+      },
+      "width": {
+        "name": "目标宽"
+      },
+      "height": {
+        "name": "目标高"
+      },
+      "upscale_method": {
+        "name": "放大算法"
+      },
+      "crop": {
+        "name": "裁切方式"
+      },
+      "single_side": {
+        "name": "单边优先"
+      },
+      "target_mp": {
+        "name": "目标像素量(MP)"
+      },
+      "read_frames": {
+        "name": "读取帧数(0=全部)"
+      },
+      "skip_frames": {
+        "name": "跳过前N帧"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "视频"
+      },
+      "1": {
+        "name": "音频"
+      },
+      "2": {
+        "name": "目标视频宽"
+      },
+      "3": {
+        "name": "目标视频高"
+      }
+    }
+  },
+  "PROYYPreviewAny": {
+    "display_name": "۞▷Preview Any◁۞",
+    "inputs": {
+      "source": {
+        "name": "内容"
+      }
+    },
+    "outputs": {}
+  },
+  "PROYYTiledLatentUpscale": {
+    "display_name": "۞▷Latent Upscale◁۞",
+    "inputs": {
+      "latent": {
+        "name": "latent"
+      },
+      "model_name": {
+        "name": "放大模型"
+      },
+      "scale": {
+        "name": "放大倍率"
+      },
+      "tile_size": {
+        "name": "分块尺寸(px)"
+      },
+      "tile_overlap": {
+        "name": "分块重叠(px)"
+      },
+      "align": {
+        "name": "像素对齐"
+      },
+      "enable_temporal_chunking": {
+        "name": "时间分块"
+      },
+      "precision": {
+        "name": "精度"
+      },
+      "device": {
+        "name": "设备"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "latent"
+      },
+      "1": {
+        "name": "分块报告"
+      },
+      "2": {
+        "name": "宽"
+      },
+      "3": {
+        "name": "高"
+      }
+    }
+  },
+  "PROYAYA_YoloPersonMask": {
+    "display_name": "۞▷YOLO Mask◁۞",
+    "inputs": {
+      "image": {
+        "name": "图像"
+      },
+      "model_name": {
+        "name": "检测模型"
+      },
+      "conf": {
+        "name": "置信度"
+      },
+      "expand": {
+        "name": "外扩像素"
+      },
+      "feather": {
+        "name": "羽化"
+      },
+      "largest_only": {
+        "name": "只取最大目标"
+      },
+      "max_det": {
+        "name": "最大检测数"
+      },
+      "fill_missing": {
+        "name": "补齐缺失帧"
+      },
+      "device": {
+        "name": "设备"
+      },
+      "emit_preview": {
+        "name": "输出预览"
+      },
+      "fill_holes": {
+        "name": "填充空洞"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "遮罩"
+      },
+      "1": {
+        "name": "预览"
+      },
+      "2": {
+        "name": "运行报告"
+      }
+    }
+  },
+  "PROYYRefModFrames": {
+    "display_name": "۞▷Refmod Frames◁۞",
+    "inputs": {
+      "mod": {
+        "name": "RefMod"
+      },
+      "vae": {
+        "name": "VAE"
+      },
+      "max_frames": {
+        "name": "最大帧数"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "图像"
+      },
+      "1": {
+        "name": "报告"
+      }
+    }
+  },
+  "PROYYRefModInject": {
+    "display_name": "۞▷Refmod Inject◁۞",
+    "inputs": {
+      "windows": {
+        "name": "窗口"
+      },
+      "mod": {
+        "name": "RefMod"
+      },
+      "strength": {
+        "name": "强度"
+      },
+      "max_frames": {
+        "name": "最大帧数"
+      },
+      "enabled": {
+        "name": "启用"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "窗口"
+      },
+      "1": {
+        "name": "报告"
+      }
+    }
+  },
+  "PROYAYA_ControlVideoCheck": {
+    "display_name": "۞▷Control Video Check◁۞",
+    "inputs": {
+      "image": {
+        "name": "控制视频帧"
+      },
+      "fps": {
+        "name": "帧率"
+      },
+      "expected_frames": {
+        "name": "目标帧数"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "控制视频"
+      }
+    }
+  }
+}

@@ -1,0 +1,382 @@
+{
+  "PROYYMiniMaxH3ReferenceToVideo": {
+    "display_name": "۞▷Reference to Window◁۞",
+    "inputs": {
+      "clip": {
+        "name": "CLIP"
+      },
+      "vae": {
+        "name": "VAE"
+      },
+      "auto_segment": {
+        "name": "Auto segment"
+      },
+      "auto_prompt": {
+        "name": "Auto prompt"
+      },
+      "window_frames": {
+        "name": "Window frames"
+      },
+      "manual_lengths": {
+        "name": "Manual window lengths"
+      },
+      "overlap": {
+        "name": "Window overlap"
+      },
+      "keep_final": {
+        "name": "Keep final frames"
+      },
+      "width": {
+        "name": "Width"
+      },
+      "height": {
+        "name": "Height"
+      },
+      "length": {
+        "name": "Total frames"
+      },
+      "text_weight": {
+        "name": "Text weight"
+      },
+      "image_weight": {
+        "name": "Image ref weight"
+      },
+      "video_weight": {
+        "name": "Video ref weight"
+      },
+      "video_encode": {
+        "name": "Video encode"
+      },
+      "unload": {
+        "name": "Unload when done"
+      },
+      "preview_only": {
+        "name": "Preview only"
+      },
+      "audio_vae": {
+        "name": "Audio VAE"
+      },
+      "ref_images": {
+        "name": "Reference images"
+      },
+      "main_ref_videos": {
+        "name": "Main reference videos"
+      },
+      "ref_videos": {
+        "name": "Reference videos"
+      },
+      "main_ref_video_audios": {
+        "name": "Main reference audios"
+      },
+      "ref_audios": {
+        "name": "Reference audios"
+      },
+      "prompts": {
+        "name": "Per-window prompts"
+      },
+      "second_pass_windows": {
+        "name": "Second-pass windows"
+      },
+      "source_latent": {
+        "name": "Source latent"
+      },
+      "ref_cache": {
+        "name": "Reference cache"
+      },
+      "ref_cache_mb": {
+        "name": "Cache limit MB"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "windows"
+      },
+      "1": {
+        "name": "length"
+      },
+      "2": {
+        "name": "plan report"
+      }
+    }
+  },
+  "PROYYMaskedSampler": {
+    "display_name": "۞▷Window Sampler◁۞",
+    "inputs": {
+      "noise": {
+        "name": "Noise"
+      },
+      "model": {
+        "name": "Model"
+      },
+      "windows": {
+        "name": "Windows"
+      },
+      "sampler": {
+        "name": "Sampler"
+      },
+      "sigmas": {
+        "name": "Sigmas"
+      },
+      "high_cfg": {
+        "name": "High-noise CFG"
+      },
+      "cfg_split": {
+        "name": "CFG split"
+      },
+      "low_cfg": {
+        "name": "Low-noise CFG"
+      },
+      "mask": {
+        "name": "Mask"
+      },
+      "fusion_preserve": {
+        "name": "Fusion preserve"
+      },
+      "rolling_enabled": {
+        "name": "Rolling"
+      },
+      "rolling_strength": {
+        "name": "Rolling strength"
+      },
+      "rolling_mode": {
+        "name": "Rolling mode"
+      },
+      "rolling_front_high": {
+        "name": "Rolling high sigma"
+      },
+      "rolling_front_low": {
+        "name": "Rolling low sigma"
+      },
+      "unload": {
+        "name": "Unload when done"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "joint latent"
+      },
+      "1": {
+        "name": "run report"
+      }
+    }
+  },
+  "PROYYImageScale": {
+    "display_name": "۞▷Resize Video◁۞",
+    "inputs": {
+      "file": {
+        "name": "Video file"
+      },
+      "width": {
+        "name": "Target width"
+      },
+      "height": {
+        "name": "Target height"
+      },
+      "upscale_method": {
+        "name": "Upscale method"
+      },
+      "crop": {
+        "name": "Crop"
+      },
+      "single_side": {
+        "name": "Single side"
+      },
+      "target_mp": {
+        "name": "Target megapixels"
+      },
+      "read_frames": {
+        "name": "Read frames (0 = all)"
+      },
+      "skip_frames": {
+        "name": "Skip first N frames"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "Video"
+      },
+      "1": {
+        "name": "Audio"
+      },
+      "2": {
+        "name": "Target width"
+      },
+      "3": {
+        "name": "Target height"
+      }
+    }
+  },
+  "PROYYPreviewAny": {
+    "display_name": "۞▷Preview Any◁۞",
+    "inputs": {
+      "source": {
+        "name": "Source"
+      }
+    },
+    "outputs": {}
+  },
+  "PROYYTiledLatentUpscale": {
+    "display_name": "۞▷Latent Upscale◁۞",
+    "inputs": {
+      "latent": {
+        "name": "latent"
+      },
+      "model_name": {
+        "name": "Upscaler model"
+      },
+      "scale": {
+        "name": "Scale"
+      },
+      "tile_size": {
+        "name": "Tile size (px)"
+      },
+      "tile_overlap": {
+        "name": "Tile overlap (px)"
+      },
+      "align": {
+        "name": "Align"
+      },
+      "enable_temporal_chunking": {
+        "name": "Temporal chunking"
+      },
+      "precision": {
+        "name": "Precision"
+      },
+      "device": {
+        "name": "Device"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "latent"
+      },
+      "1": {
+        "name": "tile report"
+      },
+      "2": {
+        "name": "Width"
+      },
+      "3": {
+        "name": "Height"
+      }
+    }
+  },
+  "PROYAYA_YoloPersonMask": {
+    "display_name": "۞▷YOLO Mask◁۞",
+    "inputs": {
+      "image": {
+        "name": "Image"
+      },
+      "model_name": {
+        "name": "Detection model"
+      },
+      "conf": {
+        "name": "Confidence"
+      },
+      "expand": {
+        "name": "Expand (px)"
+      },
+      "feather": {
+        "name": "Feather"
+      },
+      "largest_only": {
+        "name": "Largest only"
+      },
+      "max_det": {
+        "name": "Max detections"
+      },
+      "fill_missing": {
+        "name": "Fill missing frames"
+      },
+      "device": {
+        "name": "Device"
+      },
+      "emit_preview": {
+        "name": "Emit preview"
+      },
+      "fill_holes": {
+        "name": "Fill holes"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "mask"
+      },
+      "1": {
+        "name": "preview"
+      },
+      "2": {
+        "name": "run report"
+      }
+    }
+  },
+  "PROYYRefModFrames": {
+    "display_name": "۞▷Refmod Frames◁۞",
+    "inputs": {
+      "mod": {
+        "name": "RefMod"
+      },
+      "vae": {
+        "name": "VAE"
+      },
+      "max_frames": {
+        "name": "Max frames"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "images"
+      },
+      "1": {
+        "name": "report"
+      }
+    }
+  },
+  "PROYYRefModInject": {
+    "display_name": "۞▷Refmod Inject◁۞",
+    "inputs": {
+      "windows": {
+        "name": "Windows"
+      },
+      "mod": {
+        "name": "RefMod"
+      },
+      "strength": {
+        "name": "Strength"
+      },
+      "max_frames": {
+        "name": "Max frames"
+      },
+      "enabled": {
+        "name": "Enabled"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "windows"
+      },
+      "1": {
+        "name": "report"
+      }
+    }
+  },
+  "PROYAYA_ControlVideoCheck": {
+    "display_name": "۞▷Control Video Check◁۞",
+    "inputs": {
+      "image": {
+        "name": "Control video frames"
+      },
+      "fps": {
+        "name": "Frame rate"
+      },
+      "expected_frames": {
+        "name": "Expected frames"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "control video"
+      }
+    }
+  }
+}

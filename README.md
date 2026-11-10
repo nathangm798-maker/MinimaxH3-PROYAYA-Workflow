@@ -9,6 +9,7 @@
 ## 目录
 
 ```
+custom_nodes/PROYAYA/        PROYAYA 自定义节点包（MIT，全部节点源码）
 workflows/
   PRO-基础版.json      一采：换人采样（384×672），输出 joint AV latent
   PRO-二采版.json      二采：latent 2× 放大（768×1344）后接力重采样
@@ -63,7 +64,8 @@ docs/审查报告.md               两版工作流参数审查 + 节点文案问
 
 ## 使用步骤
 
-1. ComfyUI 安装 PROYAYA 自定义节点包，放入 `models/` 对应模型（UNet / LoRA / CLIP / 视频 VAE / 音频 VAE / latent upscaler）。
+1. 把 `custom_nodes/PROYAYA` 整个文件夹拷进 `ComfyUI/custom_nodes/`（本仓库已含全部源码，MIT 许可）；
+   模型放入 `models/` 对应目录（UNet / LoRA / CLIP / 视频 VAE / 音频 VAE / latent upscaler）。
 2. 把 `examples/reference/` 里的两张素材拷进 `ComfyUI/input/`。
 3. 载入 `workflows/PRO-基础版.json`，确认参考视频/参考图/提示词，跑一采 → 得到 `latents/PROYAYA_pass1_{video,audio}`。
 4. 载入 `workflows/PRO-二采版.json`，指向一采 latent，跑二采。

@@ -1,0 +1,17 @@
+# PROYAYA - optional third-party dependencies
+#
+# Everything else this pack needs (torch / numpy / av / safetensors / opencv) is
+# installed by ComfyUI itself. Do NOT pin them here: on the Windows portable build
+# an extra "torch>=..." style line can make pip upgrade torch or numpy and break
+# an install that was working fine.
+#
+# ComfyUI itself must be >= 0.30.0 (MiniMax-H3 support, PR #15224). That is a hard
+# requirement and cannot be satisfied by pip - upgrade ComfyUI instead.
+#
+# Only the "Yolo Mask" node needs the line below. The other seven nodes work
+# without it; the startup log will say so.
+ultralytics>=8.0.0
+
+# Portables: python_embeded\python.exe -m pip install "ultralytics>=8.0.0"
+# Then check that torch / numpy were not changed:
+#   python_embeded\python.exe -m pip list | findstr /I "torch numpy"
